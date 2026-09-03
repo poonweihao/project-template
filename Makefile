@@ -18,6 +18,7 @@ ifneq ($(HAS_JS),)
 endif
 	pre-commit install --install-hooks
 	pre-commit install --hook-type commit-msg
+	pre-commit install --hook-type pre-push
 
 setup-ci: ## Dependencies only, no git hooks
 ifneq ($(HAS_PY),)
