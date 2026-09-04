@@ -31,6 +31,12 @@ Applied from `scripts/ruleset-main.json`: pull request required, `check` status 
 linear history, force-push and deletion blocked, squash-only merge. Approvals are NOT
 required — a self-approval gate is theatre. CI is the gate.
 
+## Releasing
+
+release-please opens a `chore(main): release x.y.z` PR after merges land on `main`. Its checks
+sit at `action_required` until you press **Approve and run** - that click is the release
+approval, deliberately kept. See `docs/adr/0002`.
+
 ## Rollback
 
 Revert the squash commit for the change, or redeploy the previous tag. One commit per
