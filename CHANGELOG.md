@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/poonweihao/project-template/compare/v0.1.1...v0.2.0) (2026-09-04)
+
+
+### Features
+
+* block work identifiers from being committed ([#9](https://github.com/poonweihao/project-template/issues/9)) ([5e6a30c](https://github.com/poonweihao/project-template/commit/5e6a30c9f8b042befa3b14af809ec1ac6d196741)), closes [#8](https://github.com/poonweihao/project-template/issues/8)
+
 ## [0.1.1](https://github.com/poonweihao/project-template/compare/v0.1.0...v0.1.1) (2026-09-04)
 
 
