@@ -1,0 +1,19 @@
+# Copy to ~/.config/public-denylist (or one directory above your repos) and fill in.
+# NEVER commit the real list - it would publish the very terms you are hiding.
+# One extended-regex per line, matched case-insensitively.
+
+# your employer's name and email domain
+# acme-corp
+# @acme-corp\.com
+
+# your work email
+# firstname\.lastname@
+
+# internal project and ticket keys
+# PROJ-[0-9]+
+
+# colleagues' names
+# jane doe
+
+# client names
+# bigclient
