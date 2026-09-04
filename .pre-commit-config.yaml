@@ -26,6 +26,12 @@ repos:
         stages: [commit-msg]
   - repo: local
     hooks:
+      - id: check-public-safe
+        name: block work identifiers from being committed
+        entry: scripts/check-public-safe.sh
+        language: script
+        pass_filenames: false
+        always_run: true
       - id: no-direct-push-from-main
         name: refuse direct pushes from main
         entry: scripts/guard-main.sh

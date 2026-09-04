@@ -64,6 +64,9 @@ endif
 
 check: lint typecheck test ## Everything CI enforces
 
+public-check: ## Scan for work identifiers that must not be published
+	scripts/check-public-safe.sh
+
 secrets: ## Scan working tree for committed secrets
 	gitleaks detect --no-banner --redact --source .
 
@@ -76,4 +79,4 @@ prune-js: ## Drop the TypeScript half of the template
 clean:
 	rm -rf .venv node_modules .pytest_cache .ruff_cache .mypy_cache dist build
 
-.PHONY: help setup setup-ci format lint typecheck test check secrets prune-py prune-js clean
+.PHONY: help setup setup-ci format lint typecheck test check public-check secrets prune-py prune-js clean
