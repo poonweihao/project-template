@@ -37,7 +37,16 @@ gh repo edit "$OWNER/$NAME" \
   --enable-issues \
   --enable-wiki=false
 
-"$DIR/apply-ruleset.sh" "$OWNER/$NAME"
+# release-please cannot open its version PR without this
+gh api --method PUT "repos/$OWNER/$NAME/actions/permissions/workflow" \
+  -f default_workflow_permissions=write -F can_approve_pull_request_reviews=true >/dev/null
+
+# Free plan enforces rulesets on public repos only
+gh api --method PATCH "repos/$OWNER/$NAME" \
+  -F 'security_and_analysis[secret_scanning][status]=enabled' \
+  -F 'security_and_analysis[secret_scanning_push_protection][status]=enabled' >/dev/null 2>&1 || true
+
+"$DIR/apply-ruleset.sh" "$OWNER/$NAME" || true
 
 echo
 echo "Repo ready: https://github.com/$OWNER/$NAME"
